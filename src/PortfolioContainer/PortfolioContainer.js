@@ -13,7 +13,6 @@ id={screen.screen_name}/> : <div key={screen.screen_name}></div>
 )
 }
 
-
 return(
 <div className='portfolio-container'>{mapAllScreens()}
 
