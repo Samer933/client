@@ -1,5 +1,5 @@
 import React from 'react';
-import { TOTAL_SCREENS} from '../utilities/commonUtils';
+import {TOTAL_SCREENS} from '../utilities/commonUtils';
 
 
 export default function PortfolioContainer(){
@@ -10,7 +10,7 @@ return(
 id={screen.screen_name}/> : <div key={screen.screen_name}></div> 
 
     ))
-)
+)  
 }
 
 return(

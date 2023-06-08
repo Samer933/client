@@ -69,10 +69,10 @@ checkCurrentScreenUnderViewPort= (event)=>{
 
             if(fullyVisible){
                 ScrollService.currentScreenBroadCaster.next({
-                    screenInView: screen.screen_name
+                    screenInView: screen.screen_name,
                 });
                 break;
-            }
+            } 
 
 
         }
