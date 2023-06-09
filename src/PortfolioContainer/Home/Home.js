@@ -6,7 +6,7 @@ import './Home.css'
 function Home(props) {
     return (
         <div className='home-container'>
-            <Header/>
+            <Header/> 
             <Profile/>
             <Footer/>
         </div>

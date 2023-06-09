@@ -14,10 +14,10 @@ export default function Header() {
 
   const updateCurrentScreen = (currentScreen) => {
     if (!currentScreen || !currentScreen.screenInView) return;
-    let screenIndex = GET_SCREEN_INDEX(currentScreen.screenInView);
-    if (screenIndex < 0) return;
-  };
-  let currentScreenSubscription = ScrollService.cureentScreenBroadCaster.subscribe(updateCurrentScreen)
+    let screenIndex = GET_SCREEN_INDEX(currentScreen.screenInView)
+    if (screenIndex < 0) return
+  }
+  let currentScreenSubscription = ScrollService.currentScreenBroadCaster.subscribe(updateCurrentScreen)
 
   const getHeaderOption = () => {
     return( TOTAL_SCREENS.map((screen, i) => ( 
@@ -43,11 +43,10 @@ export default function Header() {
 
   const switchScreen = (index, screen) => {
     let screenComponent = document.getElementById(screen.screen_name)
-    if (!screenComponent) 
-    return;
+    if (!screenComponent) return;
 
-    screenComponent.scrollIntoView({ behavior: "smooth" })
-    setSelectedScreen(index)
+    screenComponent.scrollIntoView({ behavior: "smooth" });
+    setSelectedScreen(index);
     setShowHeaderOptions(false);
   };
 
@@ -60,9 +59,9 @@ export default function Header() {
               <FontAwesomeIcon className="header_hamburger-bars" icon={faBars}/>
             </div>
         <div className="header-logo">
-            <span>Samer</span>
+            <span>Samer Salkini Sawas</span>
         </div>
-        <div className={(showHeaderOptions)? "header-optons show-hamburger-options": "heaer-options"}>
+        <div className={(showHeaderOptions)? "header-options show-hamburger-options": "header-options"}>
             {getHeaderOption()}
         </div>
         </div>

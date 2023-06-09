@@ -4,7 +4,7 @@ import Home from "../PortfolioContainer/Home/Home";
 
 export const TOTAL_SCREENS = [
 {
-sreen_name: "Home",
+screen_name: "Home",
 component:Home,
 },
 ];
