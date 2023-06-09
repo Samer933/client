@@ -1,6 +1,5 @@
 import { TOTAL_SCREENS } from "./commonUtils";
 import {Subject} from 'rxjs';
-import {object} from 'prop-types';
 
 export default class ScrollService {
 
@@ -39,19 +38,17 @@ case "partial":
     return partiallyVisible;
 
     case "complete":
-        return completelyVisible
+        return completelyVisible;
         default: 
-        return false 
+        return false ;
 
     }
 }
 
 checkCurrentScreenUnderViewPort= (event)=>{
 
-    if (!event || object.keys(event).length < 1 ) 
-    return ; 
-
-    console.log(TOTAL_SCREENS); 
+    if (!event||Object.keys(event).length < 1 ) 
+    return ;
 
     for (let screen of TOTAL_SCREENS){
         let screenFromDOM = document.getElementById(screen.screen_name);

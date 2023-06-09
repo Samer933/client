@@ -41,9 +41,11 @@
     width: 100%;
     position: absolute;
     display: flex;
-    justify-content : center;
+    justify-content: center;
+    left: 0%;
+    transform: translateY(-51%);
+   
 }
-
 .seperator-blob div{
 width: 35px;
 border-radius: 10px;
