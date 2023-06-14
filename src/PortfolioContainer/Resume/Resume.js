@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import ScreenHeading from "../../utilities/ScreenHeading/ScreenHeading";
 import ScrollService from "../../utilities/ScrollService";
 import Animations from "../../utilities/Animatios";
+import "./Resume.css";
 
 export default function Resume(props) {
   const [selectedBulletIndex, setSelectedBulletIndex] = useState(0);
@@ -15,30 +16,29 @@ export default function Resume(props) {
   const fadeInSubcription =
     ScrollService.currentScreenFadeIn.subscribe(fadeInScreenHandler);
 
-  const ResumeHeading = (props) => {
-    return( <div className="resume-heading">
-    <div className="resume-main-heading">
-      <div className="heading-bullet">
-        <span>{props.heading ? props.heading : ""}</span>
-        {props.fromDate && props.toDate ? (
-          <div className="heading-date">
-            {props.fromDate + "_" + props.toDate}
+    const ResumeHeading = (props) => {
+      return (
+        <div className="resume-heading">
+          <div className="resume-main-heading">
+            <div className="heading-bullet"></div>
+            <span>{props.heading ? props.heading : ""}</span>
+            {props.fromDate && props.toDate ? (
+              <div className="heading-date">
+                {props.fromDate + " " + props.toDate}
+              </div>
+            ) : (
+              <div></div>
+            )}
           </div>
-        ) : (
-          <div></div>
-        )}
-      </div>
-
-      <div className="resume-sub-heading">
-        <span>{props.sunHeading ? props.subHeading : ""}</span>
-      </div>
-      <div className="resume-heading-description">
-        <span>{props.description ? props.description : ""}</span>
-      </div>
-    </div>
-  </div>)
-   
-  };
+          <div className="resume-sub-heading">
+            <span>{props.subHeading ? props.subHeading : ""}</span>
+          </div>
+          <div className="resume-heading-description">
+            <span>{props.description ? props.description : ""}</span>
+          </div>
+        </div>
+      );
+    };
 
   const resumeBullets = [
     { label: "Education", logoSrc: "education.svg" },
@@ -50,15 +50,15 @@ export default function Resume(props) {
 
   const programmingSkillDetails = [
     { skill: "JavaScript", ratingPercentage: 75 },
-    { skill: "React JS", ratingPercentage: 70 },
+    { skill: "React JS", ratingPercentage: 65 },
     { skill: "Express JS", ratingPercentage: 65 },
-    { skill: "Node JS", ratingPercentage: 75 },
+    { skill: "Node JS", ratingPercentage: 60 },
     { skill: "Mongo DB", ratingPercentage: 70 },
-    { skill: "HTML", ratingPercentage: 80 },
-    { skill: "CSS", ratingPercentage: 80 },
-    { skill: "C#", ratingPercentage: 85 },
-    { skill: ".NET FrameWork", ratingPercentage: 75 },
-    { skill: "Java", ratingPercentage: 60 },
+    { skill: "HTML", ratingPercentage: 65 },
+    { skill: "CSS", ratingPercentage: 70 },
+    { skill: "C#", ratingPercentage: 70 },
+    { skill: ".NET FrameWork", ratingPercentage: 70 },
+    { skill: "Java", ratingPercentage: 40 },
   ];
 
   const projectsDetails = [
@@ -83,21 +83,22 @@ export default function Resume(props) {
       subHeading: "Technologies Used : Mongo DB, Express JS, React JS, Node JS",
     },
 
-    {
-      title: "CV-WebSite",
-      duration: { fromDate: "2021", toDate: "2022" },
-      description:
-        "Build a dynamic website for managing CVs that includes a profile page featuring the actual CV, for professional presentation",
-      subHeading: "Technologies Used : .NET with MVC architecture",
-    },
+    // {
+    //   title: "CV-WebSite",
+    //   duration: { fromDate: "2021", toDate: "2022" },
+    //   description:
+    //     "Build a dynamic website for managing CVs that includes a profile page featuring the actual CV, for professional presentation",
+    //   subHeading: "Technologies Used : .NET with MVC architecture",
+    // }    ,
 
-    {
-      title: "Portfolio-Website",
-      duration: { fromDate: "2021", toDate: "2022" },
-      description:
-        "Build a basic portfolio website that presents multiple individuals simultaneously",
-      subHeading: "Technologies Used : HTML, CSS and JS",
-    },
+   
+    // {
+    //   title: "Portfolio-Website",
+    //   duration: { fromDate: "2021", toDate: "2022" },
+    //   description:
+    //     "Build a basic portfolio website that presents multiple individuals simultaneously",
+    //   subHeading: "Technologies Used : HTML, CSS and JS",
+    // },
   ];
 
   const resumeDetails = [
@@ -114,8 +115,13 @@ export default function Resume(props) {
         fromDate={"2012"}
         toDate={"2015"}
       />
+
+
     </div>,
+
+
     <div className="resume-screen-container" key="work-experience">
+       <div className="experience-container">
       <ResumeHeading
         heading={"Home Practice"}
         subHeading={"FULL STACK DEVELOPMENT"}
@@ -125,14 +131,18 @@ export default function Resume(props) {
       <div className="experience-description">
         <span className="resume-description-text">
           Developing myself and practicing through a variety of personal
-          projects
+          projects.
         </span>
-      </div>
-      ,
-      <div
-        className="resume-screen-container programming-skills-container"
-        key="programming-skills"
-      >
+    
+ </div>
+</div>
+</div>
+
+,
+     
+     
+      <div className="resume-screen-container programming-skills-container"
+        key="programming-skills" >
         {programmingSkillDetails.map((skill, index) => (
           <div className="skill-parent" key={index}>
             <div className="heading-bullet"></div>
@@ -145,11 +155,16 @@ export default function Resume(props) {
             </div>
           </div>
         ))}
+        <br />
+       
       </div>
       ,
-      <div className="resume-screen-container" key="projects">
+     
+      <div  className="resume-screen-container" key="projects">  <br/>
         {projectsDetails.map((projectsDetails, index) => (
-          <ResumeHeading
+         
+         
+         <ResumeHeading
             key={index}
             heading={projectsDetails.title}
             subHeading={projectsDetails.subHeading}
@@ -158,9 +173,11 @@ export default function Resume(props) {
             toDate={projectsDetails.duration.toDate}
           />
         ))}
-      </div>{" "}
+        
+      </div>
+       
       ,
-      <div className="resume-screen-container" key="interests">
+       <div className="resume-screen-container" key="interests">
         <ResumeHeading
           heading="Sports"
           description="I have a particular fondness for watching football,
@@ -168,11 +185,11 @@ export default function Resume(props) {
           description2="Stay in shape and maintain a good level of fitness by regularly going to the gym"
         />
         <ResumeHeading
-          heading="Teaching"
+          heading="Studying"
           description="Delving into a diverse range of concise coding tutorial courses at random, with the aim of refreshing my mind"
         />
-      </div>
-    </div>,
+      </div> 
+   
   ];
 
   const handleCarousal = (index) => {
@@ -184,51 +201,62 @@ export default function Resume(props) {
     setSelectedBulletIndex(index);
   };
 
-const getResumeScreen = () => {
+  const getResumeScreen = () => {
+    return (
+      <div
+        style={carousalOffSetStyle.style}
+        className="resume-details-carousal"
+      >
+        {resumeDetails.map((ResumeDetail) => ResumeDetail)}
+      </div>
+    );
+  };
+  const getBullets = () => {
+    return resumeBullets.map((bullet, index) => (
+      
+      
+      <div
+        onClick={() => handleCarousal(index)}
+        className={
+          index === selectedBulletIndex ? "bullet selected-bullet" : "bullet"
+        }
+        key={index}
+      >
 
-    return(
-        <div style={carousalOffSetStyle.style} 
-         className="resume-details-carousal">
-          
-          {resumeDetails.map((ResumeDetail)=> ResumeDetail)}
-
-        </div>
-    )
-}
-const getBullets = () =>{
-
-    return resumeBullets.map((bullet,index)=>(
-
-        <div onClick={()=> handleCarousal(index)} className={index === selectedBulletIndex ? "bullet selected-bullet" : "bullet"} 
-        key={index}>
-            <img src={require(`../../assets/Resume/${bullet.logoSrc}`)} className="bullet-logo" alt="Something went wrong !" />
-        </div> 
-    ))
-}
 
 
+        <img
+          src={require(`../../assets/Resume/${bullet.logoSrc}`)}
+          className="bullet-logo"
+          alt="Something went wrong !"
+          height="16px"
+          width="auto"
+      />
 
+<p  className={ index === selectedBulletIndex ?"bullet-label" : ""}>{bullet.label}</p>
+
+      </div>
+    ));
+  };
 
   return (
     <div className="resume-container screen-container" id={props.id || ""}>
       <div className="resume-content">
-     
         <ScreenHeading
           title={"Resume"}
-          subHeading={"Personal Profile Details"}/>
+          subHeading={"Personal Profile Details"}
+        />
 
-<div className="resume-card">
-    <div className="resume-bullets">
-        <div className="bullet-container">
-            <div className="bullet-icons"></div>
-            <div className="bullets">{getBullets()}</div>
+        <div className="resume-card">
+          <div className="resume-bullets">
+            <div className="bullet-container">
+              <div className="bullet-icons"></div>
+              <div className="bullets">{getBullets()}</div>
+            </div>
+          </div>
+
+          <div className="resume-bullet-details">{getResumeScreen()}</div>
         </div>
-    </div>
-
-<div className="resume-bullet-details">{getResumeScreen()}</div>
-
-
-</div>
       </div>
     </div>
   );
