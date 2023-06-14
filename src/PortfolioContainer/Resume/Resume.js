@@ -49,11 +49,11 @@ export default function Resume(props) {
   ];
 
   const programmingSkillDetails = [
-    { skill: "JavaScript", ratingPercentage: 75 },
+    { skill: "JavaScript", ratingPercentage: 70 },
     { skill: "React JS", ratingPercentage: 65 },
     { skill: "Express JS", ratingPercentage: 65 },
     { skill: "Node JS", ratingPercentage: 60 },
-    { skill: "Mongo DB", ratingPercentage: 70 },
+    { skill: "Mongo DB", ratingPercentage: 65 },
     { skill: "HTML", ratingPercentage: 65 },
     { skill: "CSS", ratingPercentage: 70 },
     { skill: "C#", ratingPercentage: 70 },
@@ -64,22 +64,22 @@ export default function Resume(props) {
   const projectsDetails = [
     {
       title: "Ecommerce Store",
-      duration: { fromDate: "2023", toDate: "ongoing" },
+      duration: { fromDate: "2023 - ", toDate: "ongoing" },
       description:
         "Seamless and comprehensive buy-and-sell journey, enriched by a diverse range of products",
       subHeading: "Technologies Used : .NET with MVC architecture",
     },
     {
       title: "Portfolio-Website",
-      duration: { fromDate: "2023", toDate: "2023" },
+      duration: { fromDate: "2023 - ", toDate: "2023" },
       description: "Build a portfolio website to professionally present myself",
       subHeading: "Technologies Used : React JS and Node JS",
     },
     {
       title: "Online Platform Offering Free Courses",
-      duration: { fromDate: "2022", toDate: "2023" },
+      duration: { fromDate: "2022 - ", toDate: "2023" },
       description:
-        " Knowledge exchange project through online courses, enabling users to both create and take courses on various subjects",
+        " Knowledge exchange project through online courses, create and take courses on various subjects",
       subHeading: "Technologies Used : Mongo DB, Express JS, React JS, Node JS",
     },
 
@@ -101,31 +101,32 @@ export default function Resume(props) {
     // },
   ];
 
+  // Education
   const resumeDetails = [
     <div className="resume-screen-container" key="education">
       <ResumeHeading
         heading={"Örebro University - Sweden"}
         subHeading={"Systems Sciences"}
-        fromDate={"2020"}
+        fromDate={"2020 - "}
         toDate={"2023"}
       />
       <ResumeHeading
         heading={"Aleppo University - Syria"}
         subHeading={"Arabic literature"}
-        fromDate={"2012"}
+        fromDate={"2012 - "}
         toDate={"2015"}
       />
 
 
     </div>,
 
-
+ // Work Experiences
     <div className="resume-screen-container" key="work-experience">
        <div className="experience-container">
       <ResumeHeading
         heading={"Home Practice"}
         subHeading={"FULL STACK DEVELOPMENT"}
-        fromDate={"2023"}
+        fromDate={"2023 - "}
         toDate={"Present"}
       />
       <div className="experience-description">
@@ -140,26 +141,27 @@ export default function Resume(props) {
 
 ,
      
-     
+     // Programmering Skills
       <div className="resume-screen-container programming-skills-container"
         key="programming-skills" >
         {programmingSkillDetails.map((skill, index) => (
           <div className="skill-parent" key={index}>
             <div className="heading-bullet"></div>
             <span>{skill.skill}</span>
-            <div className="skill-procentage">
+            <div className="skill-percentage">
               <div
                 style={{ width: skill.ratingPercentage + "%" }}
-                className="active-precentage"
+                className="active-percentage-bar"
               ></div>
             </div>
           </div>
         ))}
-        <br />
-       
+        
+  
       </div>
       ,
      
+      // Projects 
       <div  className="resume-screen-container" key="projects">  <br/>
         {projectsDetails.map((projectsDetails, index) => (
          
@@ -177,6 +179,9 @@ export default function Resume(props) {
       </div>
        
       ,
+
+      // Interests 
+
        <div className="resume-screen-container" key="interests">
         <ResumeHeading
           heading="Sports"
@@ -229,8 +234,7 @@ export default function Resume(props) {
           src={require(`../../assets/Resume/${bullet.logoSrc}`)}
           className="bullet-logo"
           alt="Something went wrong !"
-          height="16px"
-          width="auto"
+         
       />
 
 <p  className={ index === selectedBulletIndex ?"bullet-label" : ""}>{bullet.label}</p>
