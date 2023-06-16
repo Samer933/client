@@ -175,7 +175,7 @@ color: white;
     font-size: 16px;
     color: #1f2235
 }
-
+      
 
 @media only screen and (max-width: 1110px) {
     .resume-card {
@@ -185,9 +185,6 @@ color: white;
         padding: 0 0 0 70px;
     }
 }
-
-
-
    @media only screen and (max-width: 1023px) {
 .resume-content{
 display: flex;

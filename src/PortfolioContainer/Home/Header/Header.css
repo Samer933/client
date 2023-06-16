@@ -23,11 +23,21 @@
 .header-options{
     display:flex;
     align-items: center;
+    cursor: pointer;
+    justify-content: space-between;
+  
 }
+
+.header-options > * {
+    /* Add margin or padding to create spacing between the elements */
+    margin: 30px  ; /* Adjust the value as needed */
+  }
+
 .header-option{
     font-size: 16px;
     cursor: pointer;
     font-weight: 600;
+
 }
 
 .header-hamburger{
