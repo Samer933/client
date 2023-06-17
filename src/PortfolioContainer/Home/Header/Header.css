@@ -29,8 +29,8 @@
 }
 
 .header-options > * {
-    /* Add margin or padding to create spacing between the elements */
-    margin: 30px  ; /* Adjust the value as needed */
+ 
+    margin: 30px  ; 
   }
 
 .header-option{

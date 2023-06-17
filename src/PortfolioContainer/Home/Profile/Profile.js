@@ -10,6 +10,7 @@ function Profile(props) {
         <div className="profile-details-name">
           <div className="cloz">
             <div className="cloz-icon">
+              
             <a href="https://www.facebook.com/samer.salkini93">
               <i className="fa fa-facebook-square"></i>
             </a>
@@ -19,12 +20,10 @@ function Profile(props) {
             <a href="https://www.instagram.com/samer_salkini/">
               <i className="fa fa-instagram"></i>
             </a>
-            <a href="#">
-              <i className="fa fa-youtube-square"></i>
+            <a href="https://github.com/Samer933">
+              <i className="fa fa-github"></i>
             </a>
-            <a href="https://twitter.com/samer_salk54291">
-              <i className="fa fa-twitter"></i>
-            </a>
+           
                 </div>   
           </div>
 
@@ -41,16 +40,15 @@ function Profile(props) {
                 <Typical
                   loop={Infinity}
                   steps={[
-                    "Enthusiastic Dev ",
+                    "Collaborative Agile Dev 🤝 ",
                     1000,
-                    "Full Stak Developer 👨‍💻",
+                    "Full Stack Dev 👨‍💻",
                     1000,
                     "MERN Stack Dev 🧑‍💻",
                     1000,
-                    "Cross Platform Dev 🗺️",
+                    "Adaptable Coder  🗺️",
                     1000,
-                    "React/React Native Dev 📱",
-                    1000,
+                    
                   ]}
                 />
               </h1>
