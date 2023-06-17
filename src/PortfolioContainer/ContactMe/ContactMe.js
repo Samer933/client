@@ -59,11 +59,12 @@ export default function ContactMe(props) {
 
         <div className="back-form">
           <div className="img-back">
-            <h4>Send Your Email Here!</h4>
+         
             <img src={imgBack} alt="Something Went Wrong !!" />
           </div>
           <form>
             <p>{banner}</p>
+            <h4>Send Your Email Here!</h4>
             <label htmlFor="name">Name</label>
             <input type="text" onChange={handelName} value={name} />
             <label htmlFor="email">Email</label>
