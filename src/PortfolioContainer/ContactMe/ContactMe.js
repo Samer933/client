@@ -32,6 +32,7 @@ export default function ContactMe(props) {
   const handelMessage = (e) => {
     setMessage(e.target.value);
   };
+  console.log(name);
   return (
     <div className="main-container" id={props.id || ""}>
       <ScreenHeading subHeading={"Keep the Lines Open"} title={"Contact Me"} />
@@ -64,11 +65,11 @@ export default function ContactMe(props) {
           <form>
             <p>{banner}</p>
             <label htmlFor="name">Name</label>
-            <input type="text" />
+            <input type="text" onChange={handelName} value={name} />
             <label htmlFor="email">Email</label>
-            <input type="email" />
+            <input type="email" onChange={handelEmail} value={email} />
             <label htmlFor="message">Message</label>
-            <textarea type="text" />
+            <textarea type="text" onChange={handelMessage} value={message} />
             <div className="send-btn">
               <button type="submit">
                 Send <i className="fa fa-paper-plane" />
