@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import Typical from "react-typical";
-
+import axios from "axios";
 import "./ContactMe.css";
 import imgBack from "../../../src/images/mailz.jpeg";
 import load1 from "../../../src/images/load2.gif";
 import ScreenHeading from "../../utilities/ScreenHeading/ScreenHeading";
 import ScrollService from "../../utilities/ScrollService";
 import Animations from "../../utilities/Animatios";
+import { toast } from "react-toastify";
 
 export default function ContactMe(props) {
   let fadeInScreenHandler = (screen) => {
@@ -33,6 +34,32 @@ export default function ContactMe(props) {
     setMessage(e.target.value);
   };
   console.log(name);
+
+  const submitForm = async (e) => {
+    e.preventDefault();
+    try {
+      let data = {
+        name,
+        email,
+        message,
+      };
+
+      setBool(true);
+      const res = await axios.post(`/contact`, data);
+      if (name.length === 0 || email.length === 0 || message.length === 0) {
+        setBanner(res.data.msg);
+        toast.error(res.data.msg);
+        setBool(false);
+      } else if (res.status === 200) {
+        setBanner(res.data.msg);
+        toast.success(res.data.msg);
+        setBool(false);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <div className="main-container" id={props.id || ""}>
       <ScreenHeading subHeading={"Keep the Lines Open"} title={"Contact Me"} />
@@ -59,12 +86,11 @@ export default function ContactMe(props) {
 
         <div className="back-form">
           <div className="img-back">
-         
             <img src={imgBack} alt="Something Went Wrong !!" />
           </div>
-          <form>
+          <form onSubmit={submitForm}>
             <p>{banner}</p>
-            <h4>Send Your Email Here!</h4>
+            <h4>Send Your Email Here</h4>
             <label htmlFor="name">Name</label>
             <input type="text" onChange={handelName} value={name} />
             <label htmlFor="email">Email</label>
@@ -73,7 +99,11 @@ export default function ContactMe(props) {
             <textarea type="text" onChange={handelMessage} value={message} />
             <div className="send-btn">
               <button type="submit">
-                Send <i className="fa fa-paper-plane" />
+                Send <i className="fa fa-paper-plane" /> {
+                  bool? (<b className="load">
+                    <img src={load1} alt="Something went wrong !" />
+                  </b>) : ("")
+                }
               </button>
             </div>
           </form>

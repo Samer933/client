@@ -6,9 +6,9 @@ import "./AboutMe.css";
 
 export default function AboutMe(props) {
 let fadeInScreenHandler = (screen)=>{
-    if (screen.fadeScreen !== props.id)
+    if (screen.fadeInScreen !== props.id)
     return
-    Animations.animations.fadeInScreen(props.id)
+    Animations.animations.fadeInScreen(props.id) 
 }
 
 const fadeInSubcription = ScrollService.currentScreenFadeIn.subscribe(fadeInScreenHandler)
@@ -45,7 +45,7 @@ SCREEN_CONSTANTS.highlights.bullets.map((value, i )=> (
 
 return(
 
-    <div className='about-me-container screen-container' id={props.id || ""}>
+    <div className='about-me-container screen-container ' id={props.id || ""}>
         <div className='about-me-parent'>
             <ScreenHeading title={'About Me'} subHeading={'Why choose Me?'}/>
             <div className='about-me-card'>
@@ -59,7 +59,7 @@ return(
                         {renderHighlights()}
                     </div>
                     <div className='about-me-options'>
-                    <button className="btn primary-btn">{""} Hire Me {""} </button>
+                    <button className="btn primary-btn" onClick={() => ScrollService.scrollHandler.scrollToHireMe()}>{""} Hire Me {""} </button>
             <a href="CV.pdf" download="Samer's Resume">
               <button className="btn highlighted-btn">Get Resume</button>
               </a>

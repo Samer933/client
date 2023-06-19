@@ -12,7 +12,7 @@ constructor(){
     window.addEventListener('scroll', this.checkCurrentScreenUnderViewPort);
 }
 scrollToHireMe = ()=>{
-let ccontactMeScreen = document.getElementById("Contact Me")
+let ccontactMeScreen = document.getElementById("ContactMe")
 if (!ccontactMeScreen) return ;
 ccontactMeScreen.scrollIntoView({behavior:"smooth"})
 

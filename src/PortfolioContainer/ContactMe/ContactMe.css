@@ -28,10 +28,10 @@
   margin-bottom: 20px;
 }
 
-.img-back h4 {
-  color: white;
+.back-form h4 {
+  color: var(--light-blue);
   letter-spacing: 0.3rem;
-  font-weight: 400;
+  font-weight: 600;
   font-size: 18px;
   opacity: 0.5;
 }
@@ -115,7 +115,17 @@ form button:hover {
 form {
   flex: 0.9;
 }
- .col i {
+
+button .load{
+  width: 100%;
+}
+
+button .load img {
+  width: 60px;
+  color: aqua;
+}
+
+.col i {
   padding: 5px;
   color: white;
   font-size: 22px;
@@ -123,7 +133,7 @@ form {
 }
 .col i:hover {
   transform: scale(2);
-} 
+}
 
 @media screen and (min-width: 940px) {
   .back-form {
@@ -133,21 +143,29 @@ form {
     justify-content: space-between;
     margin-top: 30px;
   }
-  .img-back img{
+  .img-back img {
     flex: 1;
     align-self: center;
     margin-right: 20px;
-  
-
   }
+
   form {
     flex: 0.9;
   }
 }
 
 @media screen and (max-width: 940px) {
-   .back-form .img-back img{
-        display: none;
-    }
-  
+  .back-form .img-back img {
+    display: none;
+  }
+  .back-form h4 {
+    font-size: 12px;
+    font-weight: 300;
+  }
+}
+
+@media screen and (max-width: 414px) {
+  .central-form h2 {
+    font-size: 16px;
+  }
 }
