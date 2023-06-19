@@ -11,7 +11,7 @@ import { toast } from "react-toastify";
 
 export default function ContactMe(props) {
   let fadeInScreenHandler = (screen) => {
-    if (screen.fadeScreen !== props.id) return;
+    if (screen.fadeInScreen !== props.id) return;
     Animations.animations.fadeInScreen(props.id);
   };
 
@@ -54,6 +54,10 @@ export default function ContactMe(props) {
         setBanner(res.data.msg);
         toast.success(res.data.msg);
         setBool(false);
+
+setName("");
+setEmail("");
+setMessage("");
       }
     } catch (error) {
       console.log(error);
